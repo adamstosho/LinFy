@@ -484,8 +484,35 @@ NODE_ENV=development
 #### Frontend (.env.local)
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:5000/api
-```
 
+```
+## **Preview [Screenshots]**
+
+**Below are the interfaces of the app**
+
+![screenshot](/frontend/public/screenshots/Screenshot%20(65).png)
+Landing page Hero Section (updating based on the number of url shorted so far,  number of clicks and subscribers)
+![screenshot](/frontend/public/screenshots/Screenshot%20(66).png)
+Landing page Feature Section
+![screenshot](/frontend/public/screenshots/Screenshot%20(67).png)
+Landing page Section....
+![screenshot](/frontend/public/screenshots/Screenshot%20(68).png)
+Registration Page
+![screenshot](/frontend/public/screenshots/Screenshot%20(69).png)
+Login Page
+![screenshot](/frontend/public/screenshots/Screenshot%20(70).png)
+This is the dashboard (it is the first page to show immediately the user register/login)
+![screenshot](/frontend/public/screenshots/Screenshot%20(71).png)
+Here is the history page (where the user can get the logs of shortened URL)
+![screenshot](/frontend/public/screenshots/Screenshot%20(72).png)
+Profile page (where the details of the registered users can be changed/updated)
+![screenshot](/frontend/public/screenshots/Screenshot%20(73).png)
+API-Keys generation page (where one can generate API-Keys for free use), along with the documentation for usage
+![screenshot](/frontend/public/screenshots/Screenshot%20(74).png)
+Generated API-keys modal (popped up after the generation button is clicked)
+![screenshot](/frontend/public/screenshots/Screenshot%20(75).png)
+The popped up modal supports the actions outlined there.
+```
 ## 🤝 Contributing
 
 We welcome contributions from the community! Here's how you can help:
