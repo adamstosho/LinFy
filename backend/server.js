@@ -18,8 +18,8 @@ app.use(helmet());
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000, 
+  max: 100, 
   message: "Too many requests from this IP, please try again later.",
 });
 app.use("/api/", limiter);
@@ -27,8 +27,8 @@ app.use("/api/", limiter);
 // CORS configuration
 app.use(
   cors({
-    origin: '*', // Allow all origins
-    credentials: false // No cookies needed for API key auth
+    origin: "https://lin-fy.vercel.app/", 
+    credentials: true 
   })
 );
 
