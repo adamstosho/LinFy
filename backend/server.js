@@ -13,30 +13,30 @@ import authRoutes from './routes/auth.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Security middleware
 app.use(helmet());
 
-// Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000, 
+  max: 100, 
   message: "Too many requests from this IP, please try again later.",
 });
 app.use("/api/", limiter);
 
-// CORS configuration
+
 app.use(
   cors({
     origin: '*', // Allow all origins
-    credentials: false // No cookies needed for API key auth
+    credentials: true // No cookies needed for API key auth
   })
 );
 
-// Body parsing middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// MongoDB connection
+app.get("/", (req, res) => {
+  res.send("Backend running on Render!");
+});
+
 mongoose
   .connect(
     process.env.DATABASE_URI || "mongodb://localhost:27017/urlshortener",
@@ -78,11 +78,9 @@ if (process.env.NODE_ENV === "production") {
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api", urlRoutes);
 
-// Health check endpoint
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "OK",
@@ -91,7 +89,6 @@ app.get("/health", (req, res) => {
   });
 });
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({
@@ -103,7 +100,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 404 handler
 app.use("*", (req, res) => {
   res.status(404).json({ error: "Route not found" });
 });

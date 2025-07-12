@@ -51,11 +51,9 @@ const urlSchema = new mongoose.Schema({
   }
 });
 
-// Index for faster queries
 urlSchema.index({ urlCode: 1 });
 urlSchema.index({ createdAt: -1 });
 
-// Pre-save middleware to update lastAccessed
 urlSchema.pre('save', function(next) {
   this.lastAccessed = new Date();
   next();
