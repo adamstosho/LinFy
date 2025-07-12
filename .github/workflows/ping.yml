@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping the Render App
-        run: curl -s https://linfy-j0mz.onrender.com/health
+        run: curl -s https://linfy.onrender.com/health

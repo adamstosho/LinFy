@@ -11,7 +11,7 @@
             "description": "Local Development Server"
         },
         {
-            "url": "https://linfy-j0mz.onrender.com/api",
+            "url": "https://linfy.onrender.com/api",
             "description": "Deployed Server"
         }
     ],

@@ -62,7 +62,7 @@ const swaggerOptions = {
 if (process.env.NODE_ENV === "production") {
   swaggerOptions.definition.servers = [
     {
-      url: "https://linfy-j0mz.onrender.com",
+      url: "https://linfy.onrender.com",
       description: "Deployed Server",
     },
   ];
