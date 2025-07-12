@@ -27,7 +27,7 @@ app.use("/api/", limiter);
 // CORS configuration
 app.use(
   cors({
-    origin: "https://lin-fy.vercel.app/", 
+    origin: "https://lin-fy.vercel.app", 
     credentials: true 
   })
 );
@@ -62,7 +62,7 @@ const swaggerOptions = {
 if (process.env.NODE_ENV === "production") {
   swaggerOptions.definition.servers = [
     {
-      url: "https://linfy.onrender.com/api",
+      url: "https://linfy-j0mz.onrender.com",
       description: "Deployed Server",
     },
   ];
